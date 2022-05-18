@@ -5,43 +5,38 @@ let botonEncriptar = document.querySelector("#boton-encriptar");
 
 botonEncriptar.addEventListener("click", function(){
 	let texto = document.querySelector("#texto");
-	console.log(encriptar(texto));
-
+	console.log(encriptar(texto.value))	;
 })
 
-function reemplazarString(texto, indice){
-	let prevString = texto.substring(0, indice - 1);
-	console.log(prevString);
-	let postString = texto.substring(indice);
-	console.log(postString);
-	let nuevaString = "";
-	switch (texto[indice]){
+function reemplazarLetra(char){
+	let nuevaChar = "";
+	switch (char){
 		case "a":
-			nuevaString = prevString + "ai" + postString;
+			nuevaChar = "ai";
 			break;
 		case "e":
-			nuevaString = prevString + "enter" + postString;
+			nuevaChar = "enter";
 			break;
 		case "i":
-			nuevaString = prevString + "imes" + postString;
+			nuevaChar = "imes";
 			break;
 		case "o":
-			nuevaString = prevString + "ober" + postString;
+			nuevaChar = "ober";
 			break;
 		case "u":
-			nuevaString = prevString + "ufat" + postString;
+			nuevaChar = "ufat";
 			break;
 		default:
-		nuevaString = prevString + texto[indice] + postString;
+			nuevaChar = char;
 		}
-	return nuevaString;
+	return nuevaChar;
 }
 
 function encriptar(texto){
-	let encriptado = ""
-	for(let i = 0; i < texto.lenght; i++){
-		encriptado = reemplazarString(texto, i);
-		}
-	return encriptado;
+	let encriptado = "";
+	for(let i = 0; i < texto.length; i++){	
+		encriptado = encriptado + reemplazarLetra(texto[i]);
 	}
+	return encriptado;
+}
 
