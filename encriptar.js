@@ -2,13 +2,21 @@
 
 
 let botonEncriptar = document.querySelector("#boton-encriptar");
+let displayTexto = document.querySelector(".displayTexto");
+let pEncriptado = document.createElement("p");
+
+
 
 botonEncriptar.addEventListener("click", function(){
 	let texto = document.querySelector("#texto");
-	console.log(encriptar(texto.value))	;
+	console.log(encriptar(texto.value));
+	pEncriptado.textContent = encriptar(texto.value);
+	displayTexto.appendChild(pEncriptado);
 })
 
-function reemplazarLetra(char){
+
+
+/*function reemplazarLetra(char){
 	let nuevaChar = "";
 	switch (char){
 		case "a":
@@ -38,5 +46,15 @@ function encriptar(texto){
 		encriptado = encriptado + reemplazarLetra(texto[i]);
 	}
 	return encriptado;
+}*/
+
+function encriptar(texto){
+    let encriptado = texto
+	encriptado = encriptado.replace(/a/g, "ai");
+    encriptado = encriptado.replace(/e/g, "enter");
+    encriptado = encriptado.replace(/i/g, "imes");
+    encriptado = encriptado.replace(/o/g, "ober");
+    encriptado = encriptado.replace(/u/g, "ufat");
+    return encriptado;
 }
 
