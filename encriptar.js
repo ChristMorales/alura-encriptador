@@ -2,8 +2,9 @@
 
 
 let botonEncriptar = document.querySelector("#boton-encriptar");
-let displayTexto = document.querySelector(".displayTexto");
+let displayTexto = document.querySelector(".display-texto");
 let pEncriptado = document.createElement("p");
+let ocultar = document.querySelector(".ocultable");
 
 
 
@@ -12,11 +13,12 @@ botonEncriptar.addEventListener("click", function(){
 	console.log(encriptar(texto.value));
 	pEncriptado.textContent = encriptar(texto.value);
 	displayTexto.appendChild(pEncriptado);
+	ocultable.classList.add("ocultable");
 })
 
 
 
-/*function reemplazarLetra(char){
+function reemplazarLetra(char){
 	let nuevaChar = "";
 	switch (char){
 		case "a":
@@ -46,9 +48,9 @@ function encriptar(texto){
 		encriptado = encriptado + reemplazarLetra(texto[i]);
 	}
 	return encriptado;
-}*/
+}
 
-function encriptar(texto){
+/*function encriptar(texto){
     let encriptado = texto
 	encriptado = encriptado.replace(/a/g, "ai");
     encriptado = encriptado.replace(/e/g, "enter");
@@ -56,5 +58,5 @@ function encriptar(texto){
     encriptado = encriptado.replace(/o/g, "ober");
     encriptado = encriptado.replace(/u/g, "ufat");
     return encriptado;
-}
+}*/
 
