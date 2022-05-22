@@ -3,17 +3,19 @@
 
 let botonEncriptar = document.querySelector("#boton-encriptar");
 let displayTexto = document.querySelector(".display-texto");
-let pEncriptado = document.createElement("p");
+let pResultado = document.createElement("p");
 let ocultar = document.querySelector(".ocultable");
+let botonCopiar = document.querySelector("#boton-copiar");
 
 
 
 botonEncriptar.addEventListener("click", function(){
 	let texto = document.querySelector("#texto");
 	console.log(encriptar(texto.value));
-	pEncriptado.textContent = encriptar(texto.value);
-	displayTexto.appendChild(pEncriptado);
+	pResultado.textContent = encriptar(texto.value);
+	displayTexto.appendChild(pResultado);
 	ocultable.classList.add("ocultable");
+	botonCopiar.classList.remove("ocultable");
 })
 
 

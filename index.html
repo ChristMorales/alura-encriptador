@@ -22,10 +22,12 @@
 
 	<main>
 		<div class = "area-texto">
-			<textarea id="texto" type="input" placeholder="ingrese texto aquí" autofocus="true"></textarea>
+			<textarea id="texto" cols="40" rows="50" type="input" placeholder="ingrese texto aquí" autofocus="true"></textarea>
 		</div>
-		
+
+		<p class="letrasMinus"><img src="images/vector.png"> Solo letras minúsculas y sin acentos</p>
 		<div class="botones">
+
 			<button id="boton-encriptar">Encriptar</button>
 			<button id="boton-desencriptar">Desencriptar</button>
 		</div>
@@ -36,16 +38,15 @@
 				<p class="negrito">Ningún mensaje fue encontrado</p>
 				<p>Ingresa el texto que desees encriptar o desencriptar.</p>
 			</div>
-			<div class="ocultab">
-				<button id="boton-copiar">Copiar Texto</button>
-			</div>
 		</div>
+			<div class="boton-copiar">
+				<button id="boton-copiar" class="ocultable">Copiar Texto</button>
+			</div>
 	</main>
-	
 
 <script src="encriptar.js"></script>
 <script src="desencriptar.js"></script>
-
+<script src="copiar.js"></script>
 </body>
 
 
